@@ -1,3 +1,4 @@
+/////////////////// Directives ////////////////
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -16,8 +17,10 @@
 #define JP_SALES_POS 8
 #define OTHER_SALES_POS 9
 #define GLOBAL_SALES_POS 10
+////////////////////////////////////////////////
 
 
+/////////////////// Structs ////////////////
 struct game {
     int rank;
     int year;
@@ -43,12 +46,15 @@ struct GameCounter {
     char *name;
     int count;
 };
+////////////////////////////////////////////////
 
 
-// Declare functions used in ex13q1
+////////////////////////////////// ex13q1's function declarations ///////////////////////////////
 void ex13q11(char *filename);
 void ex13q12(char *filename);
 void ex13q13(char *filename);
+void ex13q14(char *filename);
+void ex13q15(char *filename);
 char *getToken(char line[LINE_MAX], int POS);
 int rank(char line[LINE_MAX]);
 int year(char line[LINE_MAX]);
@@ -60,3 +66,25 @@ void incrementPublisherCount(int length, struct PublisherCounter **COUNTERS, cha
 void incrementGameCount(int length, struct GameCounter **COUNTERS, char *name);
 void sortPublisherCounters(int length, struct PublisherCounter **COUNTERS);
 void sortGameCounters(int length, struct GameCounter **COUNTERS);
+void sortGlobalSales(float global[100]);
+float meanGlobalSales(float global[100]);
+float medianGlobalSales(float global[100]);
+float rangeGlobalSales(float global[100]);
+void freeRecord(struct game *record);
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////// ex13q2's function declarations ///////////////////////////////
+void ex13q2(void);
+int name_comparator(const void *p, const void *q);
+int na_comparator(const void *p, const void *q);
+int eu_comparator(const void *p, const void *q);
+int jp_comparator(const void *p, const void *q);
+int global_comparator(const void *p, const void *q);
+int year_comparator(const void *p, const void *q);
+int platform_comparator(const void *p, const void *q);
+int genre_comparator(const void *p, const void *q);
+int publisher_comparator(const void *p, const void *q);
+void sortBy(struct game records[100], char *x);
+char *makeFileName(char *x);
+////////////////////////////////////////////////////////////////////////////////////////////////
